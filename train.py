@@ -131,6 +131,7 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
 model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,
                        num_epochs=25)
 
+
 print("training complete.\n Saving model to snapshot.pth")
 #path = os.path.join(folder, 'model_{}.pth'.format(epoch))
 snap_path = "snapshot25.pth"
