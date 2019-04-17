@@ -4,15 +4,15 @@ from torchvision.transforms import transforms
 from PIL import Image
 import sys
 import cv2
-from pathlib import Path
+#from pathlib import Path
 import torch.nn as nn
 import torch.optim as optim
 from torch.optim import lr_scheduler
 import numpy as np
 import torchvision
 from torchvision import datasets, models, transforms
-import matplotlib.pyplot as plt
-import time
+#import matplotlib.pyplot as plt
+#import time
 import os
 import copy
 
@@ -24,7 +24,7 @@ model_ft = models.resnet18(pretrained=False)
 num_ftrs = model_ft.fc.in_features
 model_ft.fc = nn.Linear(num_ftrs, 4)
 try:
-	model_ft.load_state_dict(torch.load('./snapshot.pth'))
+	model_ft.load_state_dict(torch.load('./snapshot25.pth'))
 	
 except:
 	print("couldnt load model")
@@ -49,7 +49,7 @@ output = model_ft(input)
 print(output)
 
 prediction = int(torch.max(output.data, 1)[1].numpy())
-print(prediction)
+#print(prediction)
 
 if (prediction == 0):
 	print ('glass')
